@@ -10,10 +10,10 @@ import SocialLogin from './Pages/Login/SocialLogin/SocialLogin';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import ProductDetails from './Pages/ProductDetails/ProductDetails';
-// import ManageInventory from './Pages/ManageInventory/ManageInventory';
+import ManageInventory from './Pages/ManageInventory/ManageInventory';
 import MyItem from './Pages/MyItem/MyItem';
 import Checkout from './Pages/Checkout/Checkout';
-import ManageInventory from './Pages/Checkout/ManageInventory/ManageInventory';
+
 
 function App() {
   return (
@@ -28,6 +28,7 @@ function App() {
        <Route path='/manage-inventory' element={<ManageInventory></ManageInventory>}></Route>
 
         <Route path='/order/:serviceId' element={<Checkout></Checkout>}></Route>
+        
         <Route path='/myitem' element={<MyItem></MyItem>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>

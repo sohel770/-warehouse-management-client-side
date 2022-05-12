@@ -5,7 +5,7 @@ const AddProducts = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    const url = `https://farns-warehouse.herokuapp.com/products`;
+    const url = `http://localhost:5000/products`;
 
     fetch(url, {
       method: "POST",

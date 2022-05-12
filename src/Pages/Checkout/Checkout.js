@@ -1,10 +1,9 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-// import auth from "../../firebase.init";
-import useServiceDetails from "../Hooks/useServiceDetails";
-import { useParams } from "react-router-dom";
-import axios from "axios";
 import auth from "../../firebase.init";
+import useServiceDetails from "../Hooks/useServiceDetails";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 // import { toast } from "react-toastify";
 
 const Checkout = () => {
