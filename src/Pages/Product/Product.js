@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Product = ({product}) => {
-    const {_id,  name, price, rating, description, image,img } = product;
+    const {_id,  name, price, rating, description, image } = product;
 //navigation to details
 const navigate = useNavigate();
 
@@ -16,7 +16,7 @@ const navigateCheckout = (serviceId) => {
         <div>
             <div className="col-sm-6 col-md-11">
         <div className="card mb-4">
-          <img src={img} alt="im" />
+          <img src={image} alt="im" />
           <div className="card-header fs-5">{name}</div>
           <div className="card-body">
             <h5>
