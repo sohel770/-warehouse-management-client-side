@@ -4,7 +4,7 @@ import auth from "../../firebase.init";
 import useServiceDetails from "../Hooks/useServiceDetails";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-// import { toast } from "react-toastify";
+
 
 const Checkout = () => {
   const { serviceId } = useParams();
@@ -39,7 +39,8 @@ const Checkout = () => {
                 className="w-50 mb-3 text-capitalize  "
                 type="text"
                 value={
-                  user.displayName ? user.displayName : "Username not found"
+                 
+                  user?.displayName ? user?.displayName : "Username not found"
                 }
                 name="name"
                 id=""
@@ -53,7 +54,7 @@ const Checkout = () => {
                 className="w-50 mb-3   "
                 type="email"
                 name="email"
-                value={user.email}
+                value={user?.email}
                 id=""
                 placeholder="email"
                 required
@@ -62,11 +63,11 @@ const Checkout = () => {
               />
               <br />
               <input
-                className="w-50 mb-3 text-capitalize text-danger fw-bold "
+                className="w-50 mb-3 text-capitalize text-primary fw-bold "
                 type="text"
                 name="service"
                 id=""
-                value={services.name}
+                value={services?.name}
                 placeholder="service"
               />
               <br />

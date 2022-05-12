@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Register.css";
+import './Register.css'
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import SocialLogin from "../Login/SocialLogin/SocialLogin";
 
-import SocialLogin from "../SocialLogin/SocialLogin";
-import auth from "../../../firebase.init";
+
 
 const Register = () => {
   const [createUserWithEmailAndPassword] =
@@ -17,8 +18,6 @@ const Register = () => {
   };
 
 
-
-  
   return (
     <div>
           <h1 className="text-center text-danger my-3">Please Register</h1>

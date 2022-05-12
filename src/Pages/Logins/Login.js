@@ -2,10 +2,10 @@ import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import "./Login.css";
-import SocialLogin from "./SocialLogin/SocialLogin";
+import SocialLogin from "../Login/SocialLogin/SocialLogin";
 import auth from "../../firebase.init";
-import axios from "axios";
+import './Login.css'
+
 
 const Login = () => {
   const emailRef = useRef("");
@@ -25,7 +25,6 @@ const Login = () => {
     navigate(from, { replace: true });
     //   (from, { replace: true });
   }
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -34,6 +33,7 @@ const Login = () => {
     const pass = passRef.current.value;
 
     signInWithEmailAndPassword(email, pass);
+  
   };
 
   return (
@@ -88,7 +88,7 @@ const Login = () => {
           className="bg-primary"
         ></div>
       </div>
-    <SocialLogin></SocialLogin>
+  <SocialLogin></SocialLogin>
     </div>
     
   );
