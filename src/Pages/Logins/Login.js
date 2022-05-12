@@ -5,6 +5,8 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import SocialLogin from "../Login/SocialLogin/SocialLogin";
 import auth from "../../firebase.init";
 import './Login.css'
+import axios from "axios";
+// import axios from "axios";
 
 
 const Login = () => {
@@ -25,20 +27,23 @@ const Login = () => {
     navigate(from, { replace: true });
     //   (from, { replace: true });
   }
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit =async event => {
+    event.preventDefault();
 
     // getting email and pass value
     const email = emailRef.current.value;
     const pass = passRef.current.value;
 
-    signInWithEmailAndPassword(email, pass);
-  
+   await signInWithEmailAndPassword(email, pass);
+  const {data}=await axios.post('http://localhost:5000/login',{email})
+  localStorage.setItem('accessToken',data.accessToken);
+  navigate(from, { replace: true });
+console.log(data);
   };
 
   return (
     <div>
-      <h1 className="text-center text-danger my-3">Please Login</h1>
+      <h1 className="text-center text-primary my-3">Please Login</h1>
     <div className="container w-75 my-2">
       <div className="row">
         <div className="col login-bg w-50">
