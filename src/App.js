@@ -13,6 +13,7 @@ import ProductDetails from './Pages/ProductDetails/ProductDetails';
 import ManageInventory from './Pages/ManageInventory/ManageInventory';
 import MyItem from './Pages/MyItem/MyItem';
 import Checkout from './Pages/Checkout/Checkout';
+// import MyItemView from './Pages/MyItem/MyItemView/MyItemView';
 
 
 function App() {
@@ -23,12 +24,12 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
 
-        <Route path='/productDetails/:serviceId' element={<ProductDetails></ProductDetails>}></Route>
+        <Route path='/inventory/:serviceId' element={<ProductDetails></ProductDetails>}></Route>
 
        <Route path='/manage-inventory' element={<ManageInventory></ManageInventory>}></Route>
 
         <Route path='/order/:serviceId' element={<Checkout></Checkout>}></Route>
-        
+        {/* <Route path='/inventory/serviceId' element={<MyItemView></MyItemView>}></Route> */}
         <Route path='/myitem' element={<MyItem></MyItem>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
