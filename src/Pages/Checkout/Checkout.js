@@ -20,7 +20,7 @@ const Checkout = () => {
       address: event.target.address.value,
       phone: event.target.phone.value,
     };
-    axios.post("http://localhost:5000/farnsOrder", order).then((response) => {
+    axios.post("https://serene-inlet-21098.herokuapp.com/farnsOrder", order).then((response) => {
       const { data } = response;
       if (data.insertedId) {
         alert("Your order booked!!!!");
@@ -39,7 +39,7 @@ const Checkout = () => {
                 className="w-50 mb-3 text-capitalize  "
                 type="text"
                 value={
-                 
+
                   user?.displayName ? user?.displayName : "Username not found"
                 }
                 name="name"

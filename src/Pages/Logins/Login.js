@@ -27,62 +27,62 @@ const Login = () => {
     navigate(from, { replace: true });
     //   (from, { replace: true });
   }
-  const handleSubmit =async event => {
+  const handleSubmit = async event => {
     event.preventDefault();
 
     // getting email and pass value
     const email = emailRef.current.value;
     const pass = passRef.current.value;
 
-   await signInWithEmailAndPassword(email, pass);
-  const {data}=await axios.post('http://localhost:5000/login',{email})
-  localStorage.setItem('accessToken',data.accessToken);
-  navigate(from, { replace: true });
-console.log(data);
+    await signInWithEmailAndPassword(email, pass);
+    const { data } = await axios.post('https://serene-inlet-21098.herokuapp.com/login', { email })
+    localStorage.setItem('accessToken', data.accessToken);
+    navigate(from, { replace: true });
+    console.log(data);
   };
 
   return (
     <div>
       <h1 className="text-center text-primary my-3">Please Login</h1>
-    <div className="container w-75 my-2">
-      <div className="row">
-        <div className="col login-bg w-50">
-          <Form className="my-4" onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                ref={emailRef}
-                type="email"
-                placeholder="Enter email"
-              />
-            </Form.Group>
+      <div className="container w-75 my-2">
+        <div className="row">
+          <div className="col login-bg w-50">
+            <Form className="my-4" onSubmit={handleSubmit}>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control
+                  ref={emailRef}
+                  type="email"
+                  placeholder="Enter email"
+                />
+              </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                ref={passRef}
-                type="password"
-                placeholder="Password"
-              />
-            </Form.Group>
-            <Button variant="primary" type="submit" className="mb-3">
-              Submit
-            </Button>
-          </Form>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  ref={passRef}
+                  type="password"
+                  placeholder="Password"
+                />
+              </Form.Group>
+              <Button variant="primary" type="submit" className="mb-3">
+                Submit
+              </Button>
+            </Form>
+          </div>
         </div>
-      </div>
 
-      
-      
-    </div>
-    <p className="text-center my-2">
+
+
+      </div>
+      <p className="text-center my-2">
         New to Far's Warehouse ?{" "}
         <Link to="/register" onClick={navigateRegister}>
           Please Register
         </Link>{" "}
       </p>
-      
-    <div className="d-flex align-items-center justify-content-center">
+
+      <div className="d-flex align-items-center justify-content-center">
         <div
           style={{ height: "1px", width: "15%" }}
           className="bg-primary"
@@ -93,9 +93,9 @@ console.log(data);
           className="bg-primary"
         ></div>
       </div>
-  <SocialLogin></SocialLogin>
+      <SocialLogin></SocialLogin>
     </div>
-    
+
   );
 };
 

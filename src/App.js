@@ -34,20 +34,24 @@ function App() {
           </RequireAuth>
 
         }></Route>
-  <Route path='/login' element={<Login></Login>}></Route>
-  <Route path='/register' element={<Register></Register>}></Route>
-        <Route path='/order/:serviceId' element={<Checkout></Checkout>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/order/:serviceId' element={
+          <RequireAuth>
+            <Checkout></Checkout>
+          </RequireAuth>
+        }
+
+        ></Route>
 
         <Route path='/myitem' element={
-       
-        <RequireAuth> <MyItem></MyItem></RequireAuth>
+
+          <RequireAuth> <MyItem></MyItem></RequireAuth>
         }></Route>
 
-        
-        
         <Route path='/SocialLogin' element={<SocialLogin></SocialLogin>}></Route>
         <Route path='/addproduct' element={
-         <RequireAuth><AddProducts></AddProducts></RequireAuth>
+          <RequireAuth><AddProducts></AddProducts></RequireAuth>
         }></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>

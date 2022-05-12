@@ -5,7 +5,7 @@ const AddProducts = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    const url = `http://localhost:5000/products`;
+    const url = `https://serene-inlet-21098.herokuapp.com/products`;
 
     fetch(url, {
       method: "POST",
